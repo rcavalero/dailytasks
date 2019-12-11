@@ -11,7 +11,8 @@ The app has the following functionality:
 The application is located here: [Work Day Scheduler](https://rcavalero.github.io/homework5/) 
 
 The application consists of one page:
-![image](workDayScheduler.png) 
+
+![Work Day Scheduler](workDayScheduler.PNG) 
 
 ## Built With
 
