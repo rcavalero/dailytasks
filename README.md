@@ -15,7 +15,7 @@ The application consists of one page:
 
 ## Built With
 
-* This application was built using HTML, JavaScript, Bootstrap CSS Framework & some additional CSS styling.
+* This application was built using HTML, JavaScript, jQuery, Bootstrap CSS Framework & some additional CSS styling.
 
 ## Authors
 
