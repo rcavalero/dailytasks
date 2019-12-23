@@ -55,16 +55,39 @@ function createTimeSlots(start, end){
     localStorage.setItem("scheduler", JSON.stringify(scheduler));
 };
 
-renderItems();
+const schedule = $("#schedule");
+
+renderSchedule();
 updateColor();
 
 // this renders the schedule to the screen
-function renderItems(){
+function renderSchedule(){
   scheduler.forEach(function(item, index) {
-    $("#hour"+index).text(scheduler[index].hour);
-    $("#desc"+index).val(scheduler[index].desc);
-  })  
+let tsContainer = $(`<div class="container w-100 px-0">`);
+let tsRow = $(`<div class="row w-100">`);
+
+let tsCol1 = $(`<div class="col-1 h-100 px-0 text-center hour">`);
+let tsPara = $(`<p id="hour`+index+`" class="pt-2">`);
+
+let tsCol2 = $(`<div class="col-10 h-100 px-0" id="descBox`+index+`">`);
+let tsTextArea = $(`<textarea id="desc`+index+`" class="w-100 h-100 pl-2 border-0">`);
+
+let tsCol3 = $(`<div class="col-1 h-100 px-0">`);
+let tsButton = $(`<button id="saveBtn`+index+`" data-Index = "`+index+`" type ="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>`);
+
+schedule.append(tsContainer);
+tsContainer.append(tsRow);
+tsRow.append(tsCol1, tsCol2, tsCol3);
+tsCol1.append(tsPara);
+tsPara.text(scheduler[index].hour);
+tsCol2.append(tsTextArea);
+tsTextArea.val(scheduler[index].desc);
+tsCol3.append(tsButton);
+
+})  
 };
+
+
 
 // this updates the background color of the text area based on past, present & future
 function updateColor(){
@@ -74,13 +97,13 @@ function updateColor(){
     var itemHour = itemMoment.format('YYYYMMDDHH');
     
     if (itemHour === currHour) {
-      $("#descBox"+index).attr("class", "col-9 h-100 px-0 present")
+      $("#descBox"+index).attr("class", "col-10 h-100 px-0 present")
     }
     else if (itemHour>currHour) {
-      $("#descBox"+index).attr("class", "col-9 h-100 px-0 future")
+      $("#descBox"+index).attr("class", "col-10 h-100 px-0 future")
     }
     else if (itemHour<currHour) {
-    $("#descBox"+index).attr("class", "col-9 h-100 px-0 past")
+    $("#descBox"+index).attr("class", "col-10 h-100 px-0 past")
     }
   });
 };
