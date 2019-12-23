@@ -8,11 +8,11 @@ The app has the following functionality:
  2. Color codes the hour blocks for past, present & future. (A timer is set to update the colors every minute.)
  3. Scheduled items are stored to local storage to allow the user to open & close the app without losing data. 
 
-The application is located here: [Work Day Scheduler](https://rcavalero.github.io/homework5/) 
+The application is located here: [Daily Task Schedule](https://rcavalero.github.io/dailytasks/) 
 
 The application consists of one page:
 
-![Work Day Scheduler](workDayScheduler.PNG) 
+![Daily Task Schedule Schedule](assets/images/dailyTaskSchedule.png) 
 
 ## Built With
 

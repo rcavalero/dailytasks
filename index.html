@@ -1,170 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
+  <title>Daily Task Schedule</title>
 
-    <!-- Timeblocks go here -->
+</head>
 
-    <div class="container w-75 px-0">
-      <div class="row w-100">
-        <div class="col-1 h-100 px-0 text-center hour">
-          <p id="hour0" class="pt-2"></p>
-        </div>
-        <div class="col-10 h-100 px-0" id="descBox0">
-          <textarea id="desc0" class="w-100 h-100 pl-2 border-0"></textarea>
-        </div>  
-        <div class="col-1 h-100 px-0">
-          <button id="saveBtn0" data-Index="0" type="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>
-        </div>
-      </div>
-      </div>
-  
-      <div class="container w-75 px-0">
-        <div class="row w-100">
-          <div class="col-1 h-100 px-0 text-center hour">
-            <p id="hour1" class="pt-2"></p>
-          </div>
-          <div class="col-10 h-100 px-0" id="descBox1">
-            <textarea id="desc1" class="w-100 h-100 pl-2 border-0"></textarea>
-          </div>  
-          <div class="col-1 h-100 px-0">
-            <button id="saveBtn1" data-Index="1" type="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>
-          </div>
-        </div>
-      </div>
+<body>
+  <header class="jumbotron">
+    <h5 class="display-3">Daily Task Schedule</h5>
+    <!-- <p class="lead">A simple calendar app for scheduling your work day</p> -->
+    <p id="currentDay" class="lead"></p>
+  </header>
 
-      <div class="container w-75 px-0">
-        <div class="row w-100">
-          <div class="col-1 h-100 px-0 text-center hour">
-            <p id="hour2" class="pt-2"></p>
-          </div>
-          <div class="col-10 h-100 px-0" id="descBox2">
-            <textarea id="desc2" class="w-100 h-100 pl-2 border-0"></textarea>
-          </div>  
-          <div class="col-1 h-100 px-0">
-            <button id="saveBtn2" data-Index="2" type="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>
-          </div>
+  <div class="container w-75">
+    <div class="row w-100">
+      <div class="container w-50" id="taskContainer">
+        <div class="col" id="tasks">
+          <!-- task items will go here -->
         </div>
       </div>
-  
+      <div class="container w-50" id="scheduleContainer">
+        <div class="col" id="schedule">
+          <!-- This is where the dynamic time slots go -->
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <div class="container w-75 px-0">
-        <div class="row w-100">
-          <div class="col-1 h-100 px-0 text-center hour">
-            <p id="hour3" class="pt-2"></p>
-          </div>
-          <div class="col-10 h-100 px-0" id="descBox3">
-            <textarea id="desc3" class="w-100 h-100 pl-2 border-0"></textarea>
-          </div>  
-          <div class="col-1 h-100 px-0">
-            <button id="saveBtn3" data-Index="3" type="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>
-          </div>
-        </div>
-      </div>
-    
-      <div class="container w-75 px-0">
-        <div class="row w-100">
-          <div class="col-1 h-100 px-0 text-center hour">
-            <p id="hour4" class="pt-2"></p>
-          </div>
-          <div class="col-10 h-100 px-0" id="descBox4">
-            <textarea id="desc4" class="w-100 h-100 pl-2 border-0"></textarea>
-          </div>  
-          <div class="col-1 h-100 px-0">
-            <button id="saveBtn4" data-Index="4" type="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="container w-75 px-0">
-        <div class="row w-100">
-          <div class="col-1 h-100 px-0 text-center hour">
-            <p id="hour5" class="pt-2"></p>
-          </div>
-          <div class="col-10 h-100 px-0" id="descBox5">
-            <textarea id="desc5" class="w-100 h-100 pl-2 border-0"></textarea>
-          </div>  
-          <div class="col-1 h-100 px-0">
-            <button id="saveBtn5" data-Index="5" type="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>
-          </div>
-        </div>
-      </div>
-        
-      <div class="container w-75 px-0">
-        <div class="row w-100">
-          <div class="col-1 h-100 px-0 text-center hour">
-            <p id="hour6" class="pt-2"></p>
-          </div>
-          <div class="col-10 h-100 px-0" id="descBox6">
-            <textarea id="desc6" class="w-100 h-100 pl-2 border-0"></textarea>
-          </div>  
-          <div class="col-1 h-100 px-0">
-            <button id="saveBtn6" data-Index="6" type="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>
-          </div>
-        </div>
-      </div>
-          
-      <div class="container w-75 px-0"> 
-        <div class="row w-100">
-          <div class="col-1 h-100 px-0 text-center hour">
-            <p id="hour7" class="pt-2"></p>
-          </div>
-          <div class="col-10 h-100 px-0" id="descBox7">
-            <textarea id="desc7" class="w-100 h-100 pl-2 border-0"></textarea>
-          </div>  
-          <div class="col-1 h-100 px-0">
-            <button id="saveBtn7" data-Index="7" type="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>
-          </div>
-        </div>
-      </div>
-            
-      <div class="container w-75 px-0">
-        <div class="row w-100">
-          <div class="col-1 h-100 px-0 text-center hour">
-            <p id="hour8" class="pt-2"></p>
-          </div>
-          <div class="col-10 h-100 px-0" id="descBox8">
-            <textarea id="desc8" class="w-100 h-100 pl-2 border-0"></textarea>
-          </div>  
-          <div class="col-1 h-100 px-0">
-            <button id="saveBtn8" data-Index="8" type="submit" class="btn btn-block saveBtn h-100 d-inline"><i class="fa fa-lock"></i></button>
-          </div>
-        </div>
-      </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>
