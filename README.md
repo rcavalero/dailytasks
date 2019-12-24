@@ -1,4 +1,4 @@
-# Work Day Scheduler (Homework5)
+# Daily Task Schedule
 
 This application is simple schedule app that allows the user to schedule items in 1 hour time slots from
 9AM to 5PM.  
