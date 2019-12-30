@@ -19,20 +19,57 @@
 
 <body>
   <!-- <header class="jumbotron"> -->
-      <div class="container"> 
-        <header>
-        <h2 class="w-100 text-center">Daily Task Schedule</h2>
-    <p id="currentDay" class="lead text-center"></p>
-          <hr>
-  </header>
+  <div class="container">
+    <header>
+      <h2 class="w-100 text-center">Daily Task Schedule</h2>
+      <p id="currentDay" class="lead text-center"></p>
+
+      <div class="container w-50 ">
+        <div class="row w-100">
+          <div class="col-sm-12 col-md-7 text-right">
+            <label for="dayStart">Schedule Start:</label>
+            <select id="dayStart" selected="">
+              <option value="7:00am">&nbsp; 7am</option>
+              <option value="8:00am">&nbsp; 8am</option>
+              <option value="9:00am">&nbsp; 9am</option>
+              <option value="10:00am">10am</option>
+              <option value="11:00am">11am</option>
+              <option value="12:00pm">12pm</option>
+            </select>
+                    <!-- </div> -->
+            <div class="row ">
+              <div class="col text-right">
+                <label for="dayEnd">Schedule End:</label>
+                <select id="dayEnd" selected="17:00pm">
+                  <option value="13:00pm">&nbsp; 1pm</option>
+                  <option value="14:00pm">&nbsp; 2pm</option>
+                  <option value="15:00pm">&nbsp; 3pm</option>
+                  <option value="16:00pm">&nbsp; 4pm</option>
+                  <option value="17:00pm">&nbsp; 5pm</option>
+                  <option value="18:00pm">&nbsp; 6pm</option>
+                  <option value="19:00pm">&nbsp; 7pm</option>
+                </select>
+                            </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-5 d-flex align-items-center">
+            <button type="button" class="btn" id="newSched">New Schedule</button>
+          </div>
+        </div>
+      </div>  
+      <hr>
+    </header>
   </div>
+
+
+
 
   <div class="container w-75">
     <div class="row w-100">
       <!-- <div class="container w-50" id="taskContainer"> -->
-        <!-- <div class="col" id="tasks"> -->
-          <!-- task items will go here -->
-        <!-- </div> -->
+      <!-- <div class="col" id="tasks"> -->
+      <!-- task items will go here -->
+      <!-- </div> -->
       <!-- </div> -->
       <div class="container w-50" id="scheduleContainer">
         <div class="col" id="schedule">
